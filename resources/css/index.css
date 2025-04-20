@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght,CRSV,SHRP@100..900,1,100&family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=League+Spartan:wght@100..900&family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap');
+
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+* {
+  font-family: "Mona Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size: 1.25vmax;
+  color: white;
+}
+html{
+  --s: 450px; 
+  --c1: #473345;
+  --c2: #b062a7;
+  --c3: #2d292d;
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
+  padding: 4vmin;
+}
+body{
+  background-color: rgba(5,5,5,0.75);
+  margin: 0.1vmax;
+  padding: 0.5vmax 2.5vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 250px;
+  border: 50px solid black;
+  min-height: 65vh;
+  height: fit-content;
+}
+h1, h2 {
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 1,
+    "SHRP" 100;
+}
+.title{
+  font-weight: 900;
+  font-size: 4vmax;
+  background: conic-gradient( from var(--bg-angle) at 49% 5% in hsl longer hue, red, blue, limegreen, red);
+  color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 20px transparent;
+  margin-bottom: 0px;
+  animation: rainbowAnimation 20s infinite linear forwards;
+  -moz-animation: rainbowAnimation 20s infinite linear forwards;
+  -webkit-animation: rainbowAnimation 20s infinite linear forwards;
+}
+.heading{
+  font-weight: 600;
+  font-size: 2.5vmax;
+  text-align: center;
+}
+.provider{
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 1,
+    "SHRP" 100;
+  font-weight: 700;
+  font-size: 2.5vmax;
+}
+.subheading{
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.25vmax;
+  margin-bottom:-5px;
+}
+
+a {
+  text-decoration: none;
+  color: #d39393;
+  text-shadow: -2px 2px 1px rgba(255,255,255,0.8)
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e3a3a3;
+  text-shadow: -1.5px 1.5px 3px rgba(255,255,255,0.6)
+}
+main{
+  display: flex;
+}
+.section{
+  width: 50%;
+  /* height: fit-content; */
+}
+#second{
+  display: flex;
+  flex-direction:column;
+  align-items: center
+}
+.link{
+  font-family: "Geologica", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 1,
+    "SHRP" 100;
+  font-weight: 800;
+  margin: 2px;
+}
+h3{
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.75vmax;
+  margin-bottom:-2.5px;
+}
+iframe{
+  transform: scale(0.25);
+  transform-origin: 0 0;
+  width: 400%;
+  height: 400%;
+  background-color: white;
+  border-radius: 50px;
+}
+p{
+  font-size:1vmax;
+  width: 90%;
+}
+
+@keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-moz-keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+@-webkit-keyframes rainbowAnimation {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+
+@media screen and (max-width:1800px) {
+  .title {
+  -webkit-text-stroke: 10px transparent;
+  }
+}
